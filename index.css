@@ -220,6 +220,12 @@
 }
 .table1 tr:nth-child(even) {background-color: #f2f2f2;}
 
+@media screen and (max-width: 386px) {
+  .line{
+    height: 5rem;
+  }
+}
+
 /* (A) OUTER CONTAINER */
 .hwrap {
   /* (A1) DIMENSIONS */
@@ -339,8 +345,3 @@ text-decoration: underline;
   }
 }
 
-@media screen and (max-width: 386px) {
-  .line{
-    height: 5rem;
-  }
-}
