@@ -220,3 +220,128 @@
   text-align: center;
 }
 .table1 tr:nth-child(even) {background-color: #f2f2f2;}
+
+/* (A) OUTER CONTAINER */
+.hwrap {
+  /* (A1) DIMENSIONS */
+  width: 100%;
+  height: 70px; /* OPTIONAL */
+
+  /* (A2) COSMETICS */
+  background: rgb(159, 150, 150);
+  overflow: hidden; /* HIDE SCROLLBARS */
+}
+
+/* (B) MIDDLE CONTAINER - FLEX LAYOUT */
+.hmove {
+  display: flex;
+  position: relative;
+  top: 0; right: 0;
+}
+
+/* (C) SLIDES - FORCE INTO ONE LONG HORIZONTAL ROW */
+.hslide {
+  width: 100%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  text-align: center;
+  padding-left: 10px;
+}
+
+/* (D) SLIDE ANIMATION */
+@keyframes slideh {
+  /* (D0) THE IDEA - USE KEYFRAMES TO SHIFT SLIDES *
+  0% { right: 0; }
+  33% { right: 100%; }
+  66% { right: 200%; }
+  100% { right: 0; }
+ 
+  /* (D1) BUT THE ABOVE WILL SHIFT NON-STOP */
+  /* SO WE ADD PAUSES BETWEEN EACH SLIDE */
+  0% { right: 0; }
+  30% { right: 0; }
+  33% { right: 100%; }
+  63% { right: 100%; }
+  66% { right: 200%; }
+  97% { right: 200%; }
+  100% { right: 0; }
+}
+.hmove { animation: slideh linear 15s infinite; }
+.hmove:hover { animation-play-state: paused; }
+
+.hslide p{
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'sans-serif';
+}
+
+#scroll-container {
+  border-radius: 5px;
+  font-family: 'Times New Roman', Times, serif;
+  height: 100px;
+  overflow: hidden;
+  background-color: rgb(159, 150, 150);
+}
+
+#scroll-text {
+  height: 100%;
+  text-align: center;
+  
+  /* animation properties */
+  -moz-transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  
+  -moz-animation: my-animation 5s linear infinite;
+  -webkit-animation: my-animation 5s linear infinite;
+  animation: my-animation 5s linear infinite;
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+  from { -webkit-transform: translateY(-100%); }
+  to { -webkit-transform: translateY(100%); }
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+  to {
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+}
+
+.contri{
+text-decoration: underline;
+}
+@media screen and (max-width: 1338px) {
+  .hwrap{
+    height: 80px;
+  }
+}
+@media screen and (max-width: 702px) {
+  .hwrap{
+    height: 100px;
+  }
+}
+@media screen and (max-width: 483px) {
+  .hwrap{
+    height: 120px;
+  }
+}
+@media screen and (max-width: 366px) {
+  .hwrap{
+    height: 140px;
+  }
+}
+
+@media screen and (max-width: 386px) {
+  .line{
+    height: 5rem;
+  }
+}
